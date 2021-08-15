@@ -1,0 +1,242 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,400;1,500;1,600;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Style all input fields */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #e7b5eb;
+  color: black;
+  cursor: pointer;
+}
+input[type=submit]:hover{
+  background-color: #82085b;
+  color: white;
+
+}
+/* Style the container for inputs */
+.cont {
+  background-image: linear-gradient(to bottom right,#e37419,#1f366b);;
+  padding: 20px;
+  width:500px;
+  margin: 40px;
+  border-radius: 20px;
+}
+.cont h3{
+  font-family: cursive;
+}
+#heading{
+  color: white;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+
+</style>
+</head>
+<body>
+  <div class="bg">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" width="125px" alt="logo"></a>
+        </div>
+        <div class="nav">
+           <label  for="toggle">&#9776;</label>
+           <input type="checkbox" id="toggle"/>
+           <div class="menu">
+             <a href="index.html" id="head">Home</a>
+            <a href="products.html" id="head">Products</a>
+             <a href="about.html" id="head">About</a>
+             <a href="contact.html" id="head">Contact</a>
+             <a href="login.html" id="head">Login</a>
+             <a href="signup.html" id="head">Sign Up</a>
+           </div>
+        </div>
+      </div>
+    </div>
+  <br><br><br>
+
+  <center>
+    <h2 id="heading">Sign Up</h2>
+  <div class="cont" align="center">
+    <form action="success2.html">
+      <h3>Username</h3>
+
+      <input id="no" type="text" id="usrname" name="usrname" required>
+        <h3>Email id</h3>
+
+      <input type="text" id="usrname" name="usrname" required>
+        <h3>Password</h3>
+
+      <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+      <a href="success2.html"><input type="submit" value="Submit"></a>
+    </form>
+  </div>
+  </center>
+
+  <div id="message">
+    <h3>Password must contain the following:</h3>
+    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+    <p id="number" class="invalid">A <b>number</b></p>
+    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Download Our App</h3>
+          <h4>Download App for Android and iOS mobile phone.</h4>
+          <div class="app-logo">
+            <br>
+            <p>Get it on</p>
+            <br>
+            <img src="images/play-store.png" alt="">
+            <img src="images/app-store.png" alt="">
+          </div>
+        </div>
+        <div class="footer-col-2">
+          <img src="images/logo.png" alt="">
+          <p>We aim to provide user-friendly sevices. <br>Your happiness is our priority!</p>
+        </div>
+        <div class="footer-col-3">
+          <h3>Useful Links</h3>
+          <ul>
+            <li>Coupons</li>
+            <li>Blog Post</li>
+            <li>Return Policy</li>
+            <li>Join Affiliate</li>
+          </ul>
+        </div>
+        <div class="footer-col-4">
+          <h3>Follow Us</h3>
+          <ul>
+            <li><i class="fab fa-facebook-f"></i>&nbsp;  Facebook</li>
+            <li><i class="fab fa-twitter"></i>&nbsp;  Twitter</li>
+            <li><i class="fab fa-instagram"></i>&nbsp; Instagram</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+        <p class="Copyright">Copyright 2021@Trendy Stop</p>
+     </hr>
+    </div>
+  </div>
+
+  </div>
+
+<script>
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+
+</body>
+</html>

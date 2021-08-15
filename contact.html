@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>All Products | Trendy Stop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,400;1,500;1,600;1,800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" width="125px" alt="logo"></a>
+        </div>
+        <div class="nav">
+           <label for="toggle">&#9776;</label>
+           <input type="checkbox" id="toggle"/>
+           <div class="menu">
+             <a href="index.html" id="head">Home</a>
+            <a href="products.html" id="head">Products</a>
+             <a href="about.html" id="head">About</a>
+             <a href="contact.html" id="head">Contact</a>
+             <a href="login.html" id="head">Login</a>
+             <a href="signup.html" id="head">Sign Up</a>
+           </div>
+        </div>
+      </div>
+    </div>
+    <section id="contact">
+        <div class="container">
+          <h1>Contact Us</h1>
+          <div class="row">
+            <div class="col-md-6">
+              <form class="contact-form">
+                <div class="form-group" id="field">
+                  <input type="text" class="form-control" placeholder="Your Name" id="fill1" required><br>
+                </div>
+                <div class="form-group" id="field">
+                  <input type="number" class="form-control" placeholder="Phone no." id="fill2" required><br>
+                </div>
+                <div class="form-group" id="field">
+                  <input type="email" class="form-control" placeholder="Email id" id="fill3" required><br>
+                </div>
+                <br>
+                <div class="form-group" >
+                  <textarea class="form-control" rows="4" placeholder="Message" id="fill4" required></textarea><br>
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="message()">SEND MESSAGE &nbsp<i class="far fa-paper-plane"></i></button>
+              </form>
+            </div>
+            <div class="col-md-6 contact-info">
+              <div class="follow">
+                <i class="fas fa-address-card"></i>&nbsp; <b>Address: </b>27/1 , XYZ Road, Chennai.
+              </div>
+             <div class="follow">
+                <i class="fas fa-phone"></i>&nbsp; <b>Phone: </b>
+
+                +91 1234567890
+              </div>
+            <div class="follow">
+              <i class="fas fa-envelope"></i>&nbsp;  <b>Email: </b>
+                trendystop@official.com
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+  <script src="js/smooth-scroll.js"></script>
+
+ <!-- footer -->
+ <div class="footer">
+   <div class="container">
+     <div class="row">
+       <div class="footer-col-1">
+         <h3>Download Our App</h3>
+         <h4>Download App for Android and iOS mobile phone.</h4>
+         <div class="app-logo">
+           <br>
+           <p>Get it on</p>
+           <br>
+           <img src="images/play-store.png" alt="">
+           <img src="images/app-store.png" alt="">
+         </div>
+       </div>
+       <div class="footer-col-2">
+         <img src="images/logo.png" alt="">
+         <p>Our aim is to provide user-friendly sevices. Your happiness is our priority!</p>
+       </div>
+       <div class="footer-col-3">
+         <h3>Useful Links</h3>
+         <ul>
+           <li>Coupons</li>
+           <li>Blog Post</li>
+           <li>Return Policy</li>
+           <li>Join Affiliate</li>
+         </ul>
+       </div>
+       <div class="footer-col-4">
+         <h3>Follow Us</h3>
+         <ul>
+           <li><i class="fab fa-facebook-f"></i>&nbsp;  Facebook</li>
+           <li><i class="fab fa-twitter"></i>&nbsp;  Twitter</li>
+           <li><i class="fab fa-instagram"></i>&nbsp; Instagram</li>
+         </ul>
+       </div>
+     </div>
+     <hr>
+       <p class="Copyright">Copyright 2021@Trendy Stop</p>
+    </hr>
+   </div>
+ </div>
+ <script>
+ function message() {
+    var userValue1 = document.getElementById('fill1').value;
+    var userValue2 = document.getElementById('fill2').value;
+    var userValue3 = document.getElementById('fill3').value;
+    var userValue4 = document.getElementById('fill4').value;
+    if (userValue1 == "" || userValue2 == "" || userValue3 == "" || userValue4 == "" )
+    {
+            alert("field value missing");
+
+    }
+    var atposition=userValue3.indexOf("@");
+    var dotposition=userValue3.lastIndexOf(".");
+    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=userValue3.length){
+        alert("Please enter a valid e-mail address");
+
+    }
+    else{
+      window.alert("Your message has been sent sucessfully!");
+    }
+
+}
+ </script>
+
+</body>
+
+</html>
